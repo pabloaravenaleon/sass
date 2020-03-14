@@ -1,0 +1,36 @@
+/****************************************************
+*
+*   COLORES CORPORATIVOS
+*
+****************************************************/
+$KEY_COLOR_PRINCIPAL:   "PRINCIPAL";
+$KEY_COLOR_CLARO:       "CLARO";
+$KEY_COLOR_CLARO_PLUS:  "CLARO_PLUS";
+$KEY_COLOR_OSCURO:      "OSCURO";
+$KEY_COLOR_FONDO:       "FONDO";
+$COLORES: (
+    $KEY_COLOR_PRINCIPAL:   rgb(71, 67, 3),
+    $KEY_COLOR_OSCURO:      rgb(37, 36, 13),
+    $KEY_COLOR_CLARO:       rgb(187, 175, 10),
+    $KEY_COLOR_CLARO_PLUS:  rgb(255, 238, 0),
+    $KEY_COLOR_FONDO:       rgb(0, 0, 0));
+/****************************************************
+*
+*   FUENTES
+*
+****************************************************/
+$tipo-letra: Verdana, Geneva, Tahoma, sans-serif;
+$color-letra: map-get($COLORES, $KEY_COLOR_CLARO);
+$color-letra-link: map-get($COLORES, $KEY_COLOR_CLARO_PLUS);
+$tamaño-letra-titulo: 50px;
+$tamaño-letra-comun:  $tamaño-letra-titulo/2.6;
+$tamaño-letra-pie:    $tamaño-letra-titulo/4;
+/****************************************************
+*
+*   CONFIGURACIÓN BLOQUES
+*
+****************************************************/
+$borde: solid 2px map-get($COLORES, $KEY_COLOR_OSCURO);
+$ancho-seccion: 75%;
+$ancho-lateral: 100% - $ancho-seccion;
+$margen-bloques: 30px;

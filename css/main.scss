@@ -1,0 +1,102 @@
+@import "variables";
+/*************************************************** 
+*
+*       ETIQUETAS
+*
+****************************************************/
+body {
+	font-family: $tipo-letra;
+	background-color: map-get($COLORES, $KEY_COLOR_FONDO);
+	color: $color-letra;
+}
+
+ul {
+	list-style: none;
+	li {
+		display: inline-block;
+		margin-right: 50px;
+	}
+}
+/*************************************************** 
+*
+*       ESTRUCTURA / BLOQUES
+*
+****************************************************/
+.principal {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cabecera {
+	display: flex;
+	align-items: center;
+}
+
+.menu {
+	border-bottom: $borde;
+	margin-bottom: $margen-bloques;
+	margin-left: $margen-bloques;
+}
+
+.lateral {
+	width: $ancho-lateral;
+	padding: 5px;
+	font-size: $tamaño-letra-comun;
+	border-right: $borde;
+}
+
+.seccion {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: $margen-bloques;
+	margin-left: $margen-bloques;
+	width: $ancho-seccion;
+	font-size: $tamaño-letra-comun;
+}
+
+.articulo {
+	display: flex;
+	margin: $margen-bloques;    
+}
+
+.pie {
+	border-top: $borde;
+	margin-top: $margen-bloques;
+	padding-top: 20px;
+	text-align: center;
+	font-size: $tamaño-letra-pie;
+}
+/***************************************************
+*
+*      MIXINS 
+*
+****************************************************/
+@mixin efecto-hover($ancho, $alto, $difuminado) {
+	color: $color-letra-link;
+	background-color: map-get($COLORES, $KEY_COLOR_FONDO);
+	border-radius: 20px;
+	box-shadow: $ancho $alto $difuminado 0px map-get($COLORES, $KEY_COLOR_CLARO_PLUS);
+}
+/***************************************************
+*
+*       CLASES 
+*
+****************************************************/
+.link-base {
+	padding: 10px;
+	text-decoration: none;
+	color: lighten($color-letra-link, 25%);
+}
+
+.titulo {
+	font-size: $tamaño-letra-titulo;
+	border-radius: 50%;
+	border: $borde;
+	margin-left: $margen-bloques;
+}
+
+.menu__link			 { @extend .link-base; font-weight: 800;}
+.menu__link:hover    { @include efecto-hover(2px, 2px, 1px); }
+.seccion__link       { @extend .link-base; }
+.seccion__link:hover { @include efecto-hover(4px, 4px, 10px); }
